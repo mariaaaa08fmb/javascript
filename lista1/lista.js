@@ -46,3 +46,8 @@ console.log(somaa)
 console.log(divisao)
 
 // ex 5
+
+let c = 27
+
+let fahrenheit = c * 9 / 5 + 32
+console.log (fahrenheit)
