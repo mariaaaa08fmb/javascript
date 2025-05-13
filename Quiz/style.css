@@ -6,21 +6,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Questrial', sans-serif;
+   
 }
 
 /* Estilizando o corpo da página */
 body {
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(90, 173, 125);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Questrial', sans-serif;
 }
 
 /* Container principal do quiz */
 .container {
-    background-color: white;
+    background-color: rgb(61, 122, 61);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -31,8 +32,9 @@ body {
 /* Estilo do título */
 h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Estilo do placar */
@@ -53,19 +55,19 @@ h1 {
 
 /* Cor do número de acertos */
 #acertos {
-    color: #5d56bd;
+    color: #1f08a3;
 }
 
 /* Cor do número de erros */
 #erros {
-    color: #ff4444;
+    color: #bb0000;
 }
 
 /* Estilo da pergunta */
 #pergunta {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    color: #444;
+    color: #ffffff;
 }
 
 /* Estilo das opções de resposta */
@@ -89,9 +91,9 @@ h1 {
 
 /* Estilo da opção selecionada */
 .opcao.selecionada {
-    background-color: #5d56bd;
+    background-color: #b43300;
     color: white;
-    border-color: #5f58bd;
+    border-color: #b83400;
 }
 
 /* Estilo dos botões */
@@ -100,7 +102,7 @@ button {
     width: 100%;
     padding: 10px;
     margin-top: 1rem;
-    background-color: #000000;
+    background-color: #015e28;
     color: white;
     border: none;
     border-radius: 5px;
@@ -121,7 +123,7 @@ button {
 
 /* Estilo do título da pontuação final */
 #pontuacao h2 {
-    color: #333;
+    color: #ffffff;
     margin-bottom: 1rem;
 }
 
@@ -129,5 +131,5 @@ button {
 #pontuacao p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #444;
+    color: #ffffff;
 } 

@@ -1,20 +1,105 @@
 //cada pergunta tem: uma pergunta, as opções e, alternativa certa (começa no 0)
 const perguntas = [
     {
-        pergunta: "Qual o nome da nossa escola?",
-        opcoes: ["Luis Eulalio de Bueno Vidigal Filho", "Luis Eulalio", "Luis de Bueno", "Luis Eulalio de Vidigal"],
-        correta: 0
-    },
-    {
-        pergunta: "Qual o nome do nosso curso?", 
-        opcoes: ["Analise e Desenvolvimento de Sistemas", "Sistema da Informção", "Desenvolvimento de Sistemas", "Ciência da Computação"],
+        pergunta: "A Conferência de Berlim (1884-1885) teve como principal consequência:",
+        opcoes: [
+            "A independência das colônias africanas",
+            "O fim da escravidão no continente africano",
+            "A partilha da África entre potências europeias",
+            "A criação da Liga das Nações"
+        ],
         correta: 2
     },
     {
-        pergunta: "Em que ano foi fundada a nossa escola?",
-        opcoes: ["1999", "1942", "1985", "1970"],
+        pergunta: "Sobre a Revolução Francesa, é correto afirmar que:",
+        opcoes: [
+            "Consolidou o absolutismo monárquico na França",
+            "Teve como lema 'Paz, Terra e Pão'",
+            "Aboliu os privilégios da nobreza e do clero",
+            "Foi liderada exclusivamente pela aristocracia"
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "O termo 'Globalização' refere-se:",
+        opcoes: [
+            "À divisão do mundo em blocos econômicos fechados",
+            "Ao isolamento das economias nacionais",
+            "Ao aumento da interdependência econômica, política e cultural entre países",
+            "Ao fim do capitalismo em escala mundial"
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "Segundo Karl Marx, a história da humanidade é marcada por:",
+        opcoes: [
+            "Conflitos religiosos",
+            "Conflitos raciais",
+            "Luta de classes",
+            "Evolução pacífica das sociedades"
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "Qual pensador iluminista defendia a separação dos poderes?",
+        opcoes: [
+            "Rousseau",
+            "Voltaire",
+            "Montesquieu",
+            "Hobbes"
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "A Guerra Fria foi caracterizada por:",
+        opcoes: [
+            "Conflito direto entre EUA e URSS",
+            "Corrida armamentista e ideológica entre capitalismo e socialismo",
+            "Acordo de paz entre países do Ocidente e Oriente",
+            "Domínio militar da China sobre os EUA"
+        ],
         correta: 1
     },
+    {
+        pergunta: "O movimento dos trabalhadores urbanos por melhores condições no século XIX resultou em:",
+        opcoes: [
+            "Abolição do feudalismo",
+            "Reformas agrárias",
+            "Criação de leis trabalhistas e sindicatos",
+            "Expansão do sistema escravocrata"
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "A Ditadura Militar no Brasil (1964-1985) foi marcada por:",
+        opcoes: [
+            "Plena liberdade de imprensa",
+            "Desenvolvimento democrático das instituições",
+            "Censura, repressão política e perseguições",
+            "Neutralidade nas relações exteriores"
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "O conceito de etnocentrismo se refere à:",
+        opcoes: [
+            "Valorização da diversidade cultural",
+            "Visão de que uma cultura é superior às demais",
+            "Busca pela igualdade entre povos",
+            "Imposição de leis internacionais sobre culturas"
+        ],
+        correta: 1
+    },
+    {
+        pergunta: "A urbanização no Brasil, especialmente no século XX, foi caracterizada por:",
+        opcoes: [
+            "Distribuição equitativa de renda e serviços",
+            "Planejamento urbano eficiente",
+            "Crescimento acelerado e desordenado das cidades",
+            "Êxodo urbano para o campo"
+        ],
+        correta: 2
+    }
 ]
 //variáveis para controlar o quiz
 let perguntaAtual = 0 //qual pergunta está sendo mostrada
