@@ -1,0 +1,47 @@
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-image: url('20171018_v1055-b-02d.jpg');
+  background-size: 60%;  
+  background-attachment: fixed;
+
+  color: rgb(0, 0, 0);
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 2em;
+  text-shadow: 2px 2px 4px #000;
+}
+
+#contador {
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+.progresso {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #790000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.barra {
+  height: 30px;
+  background-color: #00ff00;
+  width: 0%;
+  transition: width 1s;
+}
+
+.icone {
+  width: 60px;
+  margin: 10px;
+}
+
+#mensagemFinal {
+  font-size: 2em;
+  color: gold;
+  margin-top: 20px;
+}
+
