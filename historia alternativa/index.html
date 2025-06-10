@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>João e Maria - História Interativa</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: #d1f0fc;
+    color: #000000;
+  }
+  h1 {
+    text-align: center;
+    color: #180083;
+  }
+  #historia p {
+    font-size: 1.2em;
+  }
+  button {
+    margin: 8px 8px 8px 0;
+    padding: 10px 16px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    background-color: #1323bb9a;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #0f0cbf;
+  }
+</style>
+</head>
+<body>
+
+<h1>João e Maria </h1>
+<div id="historia">
+  <p>João e Maria estão perdidos na floresta. Eles precisam decidir o que fazer primeiro. O que eles fazem?</p>
+  <button onclick="decisao1('caminhar')"> Começar a caminhar para tentar encontrar o caminho de casa</button>
+  <button onclick="decisao1('esperar')"> Esperar sentados e chamar por ajuda</button>
+</div>
+
+<script>
+  function decisao1(escolha) {
+    const div = document.getElementById("historia");
+    if (escolha === "caminhar") {
+      div.innerHTML = `
+        <p>João e Maria decidem caminhar e encontram duas trilhas: uma cheia de flores e outra com pegadas na lama. Qual trilha seguir?</p>
+        <button onclick="decisao2('flores')">Trilha das flores</button>
+        <button onclick="decisao2('pegadas')"> Trilha das pegadas</button>
+      `;
+    } else {
+      div.innerHTML = `
+        <p>Eles esperam chamando por ajuda, mas ninguém aparece. Começa a escurecer e eles ficam com medo. O que fazem agora?</p>
+        <button onclick="decisao2('acender_fogo')"> Acender uma fogueira para se aquecer</button>
+        <button onclick="decisao2('procurar_abrigo')"> Procurar um abrigo na floresta</button>
+      `;
+    }
+  }
+
+  function decisao2(escolha) {
+    const div = document.getElementById("historia");
+    if (escolha === "flores") {
+      div.innerHTML = `
+        <p>A trilha das flores leva a uma casa feita de doces! Maria quer entrar, mas João está desconfiado. O que fazer?</p>
+        <button onclick="decisao3('entrar_casa')"> Entrar na casa de doces</button>
+        <button onclick="decisao3('ignorar_casa')"> Ignorar e continuar caminhando</button>
+      `;
+    } else if (escolha === "pegadas") {
+      div.innerHTML = `
+        <p>Seguindo as pegadas, João e Maria encontram uma velha senhora que oferece ajuda. Será que dá para confiar?</p>
+        <button onclick="decisao3('confiar_senhora')"> Confiar e aceitar ajuda</button>
+        <button onclick="decisao3('desconfiar_senhora')"> Desconfiar e fugir</button>
+      `;
+    } else if (escolha === "acender_fogo") {
+      div.innerHTML = `
+        <p>O fogo atrai animais e criaturas da floresta. Um deles se aproxima curioso. O que João e Maria fazem?</p>
+        <button onclick="decisao3('falar_animais')"> Tentar conversar com os animais</button>
+        <button onclick="decisao3('fugir_fogo')"> Fugir da fogueira</button>
+      `;
+    } else if (escolha === "procurar_abrigo") {
+      div.innerHTML = `
+        <p>Eles encontram uma caverna, mas dentro tem uma aranha gigante! Como reagir?</p>
+        <button onclick="decisao3('enfrentar_aranha')"> Enfrentar a aranha com coragem</button>
+        <button onclick="decisao3('fugir_aranha')"> Fugir da caverna</button>
+      `;
+    }
+  }
+
+  function decisao3(escolha) {
+    const div = document.getElementById("historia");
+    switch (escolha) {
+      case "entrar_casa":
+        div.innerHTML = `
+          <p>Dentro da casa, a bruxa má aparece e prende João em uma gaiola. Maria precisa decidir o que fazer.</p>
+          <button onclick="decisao4('enganar_bruxa')">Enganar a bruxa para libertar João</button>
+          <button onclick="decisao4('correr_fugir')"> Correr e tentar fugir sozinha</button>
+        `;
+        break;
+      case "ignorar_casa":
+        div.innerHTML = `
+          <p>Eles continuam andando e encontram uma ponte para atravessar o rio. Mas a ponte parece frágil.</p>
+          <button onclick="decisao4('atravessar_ponte')"> Atravessar a ponte</button>
+          <button onclick="decisao4('voltar_trilha')"> Voltar pela trilha das flores</button>
+        `;
+        break;
+      case "confiar_senhora":
+        div.innerHTML = `
+          <p>A senhora revela ser uma bruxa disfarçada! Ela quer capturar João e Maria para fazer feitiços.</p>
+          <button onclick="decisao4('lutar_bruja')"> Lutar contra a bruxa</button>
+          <button onclick="decisao4('fugir_bruja')"> Fugir rápido</button>
+        `;
+        break;
+      case "desconfiar_senhora":
+        div.innerHTML = `
+          <p>João e Maria fogem e acabam encontrando um riacho com frutas saborosas. Eles descansam um pouco.</p>
+          <button onclick="decisao4('comer_frutas')"> Comer as frutas</button>
+          <button onclick="decisao4('seguir_rios')"> Seguir o curso do rio</button>
+        `;
+        break;
+      case "falar_animais":
+        div.innerHTML = `
+          <p>Os animais gostam de João e Maria e indicam um caminho seguro para sair da floresta.</p>
+          <button onclick="decisao4('seguir_animais')"> Seguir os animais</button>
+          <button onclick="decisao4('ignorar_animais')">= Ignorar e seguir sozinhos</button>
+        `;
+        break;
+      case "fugir_fogo":
+        div.innerHTML = `
+          <p>Correndo da fogueira, eles se perdem ainda mais na floresta e escurece rápido.</p>
+          <button onclick="decisao4('gritar_ajuda')"> Gritar por ajuda</button>
+          <button onclick="decisao4('andar_escuro')"> Tentar encontrar abrigo no escuro</button>
+        `;
+        break;
+      case "enfrentar_aranha":
+        div.innerHTML = `
+          <p>Com coragem, João e Maria enfrentam a aranha que foge assustadíssima.</p>
+          <button onclick="decisao4('explorar_caverna')"> Explorar a caverna</button>
+          <button onclick="decisao4('sair_caverna')"> Sair da caverna</button>
+        `;
+        break;
+      case "fugir_aranha":
+        div.innerHTML = `
+          <p>Eles fogem e encontram um caminho de pedras brilhantes, que parece mágico.</p>
+          <button onclick="decisao4('seguir_pedras')"> Seguir o caminho das pedras</button>
+          <button onclick="decisao4('voltar_floresta')"> Voltar para o centro da floresta</button>
+        `;
+        break;
+    }
+  }
+
+  function decisao4(escolha) {
+    const div = document.getElementById("historia");
+    switch (escolha) {
+      case "enganar_bruxa":
+        div.innerHTML = `
+          <p>Maria engana a bruxa, libertando João e juntos empurram a bruxa para dentro do forno. Eles escapam! 🎉<br><b>FIM FELIZ</b></p>
+        `;
+        break;
+      case "correr_fugir":
+        div.innerHTML = `
+          <p>Maria foge, mas a bruxa captura João. Maria fica perdida e assustada na floresta. <br><b></b></p>
+        `;
+        break;
+      case "atravessar_ponte":
+        div.innerHTML = `
+          <p>A ponte cai no meio, mas João e Maria conseguem se segurar e subir no outro lado. Eles estão mais perto de casa!</p>
+          <button onclick="decisao5('continuar')">➡️ Continuar</button>
+        `;
+        break;
+      case "voltar_trilha":
+        div.innerHTML = `
+          <p>Voltando pela trilha das flores, eles encontram um anjo que os guia para fora da floresta. <br><b></b></p>
+        `;
+        break;
+      case "lutar_bruja":
+        div.innerHTML = `
+          <p>João e Maria lutam bravamente, mas a bruxa é poderosa e os prende em uma jaula de cristal. <br><b></b></p>
+        `;
+        break;
+      case "fugir_bruja":
+        div.innerHTML = `
+          <p>Conseguem fugir e encontram uma árvore gigante com frutos dourados que trazem sorte. <br><b></b></p>
+        `;
+        break;
+      case "comer_frutas":
+        div.innerHTML = `
+          <p>As frutas dão muita energia a João e Maria, que encontram o caminho para casa com facilidade. <br><b></b></p>
+        `
+        break;
+      case "seguir_rios":
+        div.innerHTML = `
+          <p>Seguindo o rio, eles encontram um barco que os leva para fora da floresta, mas perdem suas coisas no caminho. <br><b></b></p>
+        `;
+        break;
+      case "seguir_animais":
+        div.innerHTML = `
+          <p>Os animais os levam em segurança para a aldeia próxima, onde são recebidos com alegria. <br><b></b></p>
+        `;
+        break;
+      case "ignorar_animais":
+        div.innerHTML = `
+          <p>Ignorando os animais, eles se perdem mais e acabam presos em um buraco profundo. <br><b></b></p>
+        `;
+        break;
+      case "gritar_ajuda":
+        div.innerHTML = `
+          <p>Gritando, eles atraem um caçador que os resgata da floresta. <br><b></b></p>
+        `;
+        break;
+      case "andar_escuro":
+        div.innerHTML = `
+          <p>Andando no escuro, eles tropeçam e se machucam, ficando presos na floresta. <br><b></b></p>
+        `;
+        break;
+      case "explorar_caverna":
+        div.innerHTML = `
+          <p>Na caverna, eles encontram joias e um caminho secreto para fora da floresta. <br><b></b></p>
+        `;
+        break;
+      case "sair_caverna":
+        div.innerHTML = `
+          <p>Saindo da caverna, encontram a floresta ainda mais densa e escura. Ficam perdidos. <br><b></b></p>
+        `;
+        break;
+      case "seguir_pedras":
+        div.innerHTML = `
+          <p>O caminho das pedras leva João e Maria até a casa dos pais, onde são recebidos com muito amor. <br><b></b></p>
+        `;
+        break;
+      case "voltar_floresta":
+        div.innerHTML = `
+          <p>Voltando para o centro da floresta, eles encontram uma bruxa má esperando por eles. <br><b>/b></p>
+        `;
+        break;
+    }
+  }
+
+  function decisao5(escolha) {
+    const div = document.getElementById("historia");
+    if (escolha === "continuar") {
+      div.innerHTML = `
+        <p>João e Maria atravessam a floresta e encontram finalmente o caminho para casa, onde vivem felizes com sua família. <br><b></b></p>
+      `;
+    }
+  }
+</script>
+
+</body>
+</html>
