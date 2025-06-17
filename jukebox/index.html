@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <h1>Jukebox</h1>
+    <p>Selecone como está se sentindo e ouça uma música</p>
+
+    <button onclick="tocar('feliz')">Feliz</button>
+     <button onclick="tocar('parar')">Parar</button>
+
+     <div id="imagem" style="margin-top: 30px;">
+        <img src="" alt="" id="foto" width="300" style="display: none;">
+     </div>
+
+     <audio src="" id="audio" constrols style="margin-top: 20px; display: none;"></audio>
+
+     <script>
+        function tocar(tipo) {
+            const audio = document.getElementById("audio")
+            const foto = document.getElementById("foto")
+
+            let musica = ""
+            let imagem = ""
+            let cor = ""
+
+            if (tipo == "feliz") {
+                musica = " https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3 "
+                imagem = "https://br.freepik.com/fotos-vetores-gratis/emoji-feliz"
+                cor = "ffe066"
+            }
+           document.body.style.backgroundColor = cor
+            foto.src = imagem
+            foto.style.display = "block"
+
+            audio.src = musica
+            audio.play()
+            audio.style.display = "block"
+        }
+        function parar() {
+            const audio = document.getElementById("foto")
+            foto.style.display = "none"
+
+            document.body.style.backgroundColor = "#fff"
+        }
+     </script>
+</body>
+</html>

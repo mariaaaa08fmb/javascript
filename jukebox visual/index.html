@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jukebox Visual</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      transition: background 0.5s ease;
+      padding: 20px;
+      background-color: rgb(127, 172, 255);
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #imagem img {
+      max-width: 400px;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    #musicaAtual {
+      font-size: 18px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .cores {
+      margin-top: 30px;
+      padding: 15px;
+      border: 2px dashed #000000;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .cores label {
+      margin: 0 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jukebox Visual </h1>
+  <p>Selecione uma emoção para ouvir uma música!</p>
+
+  <button onclick="tocar('alegria')">Alegria</button>
+  <button onclick="tocar('tristeza')">Tristeza</button>
+  <button onclick="tocar('aventura')">Aventura</button>
+  <button onclick="tocar('amor')">Amor</button>
+  <button onclick="tocar('misterio')">Mistério</button>
+  <button onclick="tocar('calma')">Calma</button>
+  <button onclick="tocar('energia')">Energia</button>
+  <button onclick="tocar('suspense')">Suspense</button>
+  <button onclick="parar()">Parar</button>
+
+  <div id="musicaAtual"></div>
+
+  <div id="imagem">
+    <img src="" id="foto" style="display: none;">
+  </div>
+
+  <audio id="audio" controls style="margin-top: 20px; display: none;"></audio>
+
+  <script>
+    const musicas = {
+      alegria: {
+        nome: "Passinho do romano",
+        musica: "alegria.mp3",
+        imagem: "alegria.png",
+        cor: "#fff176"
+      },
+      tristeza: {
+        nome: "Lovely",
+        musica: "tristeza.mp3",
+        imagem: "tristeza.png",
+        cor: "#90a4ae"
+      },
+      aventura: {
+        nome: "Phineas e ferb",
+        musica: "aventura.mp3",
+        imagem: "aventura.png",
+        cor: "#ffcc80"
+      },
+      amor: {
+        nome: "Varinha de condão",
+        musica: "amor.mp3",
+        imagem: "amor.png",
+        cor: "#f8bbd0"
+      },
+      misterio: {
+        nome: "Henry Mancini - The Pink Panther ",
+        musica: "misterio.mp3",
+        imagem: "msiterio.png",
+        cor: "#8D8A8A"
+      },
+      calma: {
+        nome: "Somebody That I Used To Know ",
+        musica: "calma.mp3",
+        imagem: "calma.png",
+        cor: "#a5d6a7"
+      },
+      energia: {
+        nome: "Locked Out Of Heaven",
+        musica: "animação.mp3",
+        imagem: "energia.png",
+        cor: "#FE83B0"
+      },
+      suspense: {
+        nome: "The Last Laugh",
+        musica: "suspense.mp3",
+        imagem: "suspense.png",
+        cor: "#b39ddb"
+      }
+    };
+
+    function tocar(tipo) {
+      const audio = document.getElementById("audio");
+      const foto = document.getElementById("foto");
+      const musicaAtual = document.getElementById("musicaAtual");
+
+      const tema = musicas[tipo];
+
+      if (tema) {
+        document.body.style.backgroundColor = tema.cor;
+        foto.src = tema.imagem;
+        foto.style.display = "block";
+        audio.src = tema.musica;
+        audio.play();
+        audio.style.display = "block";
+        musicaAtual.textContent = `Tocando: ${tema.nome}`;
+      }
+    }
+
+    function parar() {
+      const audio = document.getElementById("audio");
+      const foto = document.getElementById("foto");
+      const musicaAtual = document.getElementById("musicaAtual");
+
+      audio.pause();
+      audio.currentTime = 0;
+      audio.style.display = "none";
+
+      foto.style.display = "none";
+      document.body.style.backgroundColor = "#ffffff";
+      musicaAtual.textContent = "";
+    }
+
+    function aplicarCores() {
+      const corFundo = document.getElementById("corFundo").value;
+      const corBotoes = document.getElementById("corBotoes").value;
+      const corTexto = document.getElementById("corTexto").value;
+
+      document.body.style.backgroundColor = corFundo;
+      document.body.style.color = corTexto;
+
+      const botoes = document.querySelectorAll("button");
+      botoes.forEach(btn => {
+        btn.style.backgroundColor = corBotoes;
+        btn.style.color = corTexto;
+      });
+    }
+  </script>
+</body>
+</html>
